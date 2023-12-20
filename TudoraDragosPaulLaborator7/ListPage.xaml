@@ -6,7 +6,7 @@
     <StackLayout Margin="20">
         <Editor Placeholder="Enter the description of the shopping list"
 Text="{Binding Description}"
-HeightRequest="100" />
+HeightRequest="50" />
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -18,5 +18,18 @@ Clicked="OnSaveButtonClicked" />
 Text="Delete"
 Clicked="OnDeleteButtonClicked"/>
         </Grid>
+
+        <ListView x:Name="listView"
+Margin="20">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <Button Text="Add/Choose Item to buy" MaximumWidthRequest="300"
+Clicked="OnChooseButtonClicked"/>
     </StackLayout>
 </ContentPage>
